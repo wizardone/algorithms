@@ -14,3 +14,19 @@ MyModel = Class.new do
 end
 MyModel.new.my_method
 ```
+
+## Benchmarking anything in realtime
+```ruby
+require 'benchmark'
+def bench(count, &block)
+  Benchmark.realtime do
+    count.times { |i| yield(i) }
+  end
+end
+```
+and use it like:
+```ruby
+bench(1000) do |i|
+"joining strings is fast" << i.to_s
+end
+```
