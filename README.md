@@ -30,3 +30,9 @@ bench(1000) do |i|
 "joining strings is fast" << i.to_s
 end
 ```
+
+### Generating array of n elements in javascript
+```javascript
+let count = 4;
+[...Array(count).keys()]
+```
