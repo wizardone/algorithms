@@ -82,3 +82,9 @@ def bubble_sort(arr)
   arr
 end
 ```
+
+### Reverse string in Ruby
+```ruby
+str = 'string'
+str.chars.inject([]) {|arr, char| arr.unshift(char) }.join
+```
