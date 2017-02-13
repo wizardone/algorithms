@@ -88,3 +88,5 @@ end
 str = 'string'
 str.chars.inject([]) {|arr, char| arr.unshift(char) }.join
 ```
+
+### Find a pair of elements from array whose sum equals a given number
