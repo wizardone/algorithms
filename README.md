@@ -127,16 +127,16 @@ let hammingDistance = (strand1, strand2) => {
 
 ### Flatten an array(basic)
 ```javascript
-const arr = [1, [2,3,4], [5,6,7], null]
+const arr = [1, [2,3,4], [5,6,7], 8, [9], [10, 11, 12], null]
 let flat = [];
 let flatten = (array) => {
-  for(let num in array){
-    if(Array.isArray(array[num])){
-      let nested = array[num];
-      flatten(nested);
+  array.reduce((acc, value) => {
+    if(Array.isArray(value)){
+      flatten(value);
     } else {
-      flat.push(array[num]);
+      flat.push(value);
     }
-  }
+  }, [])
   return flat;
-}```
+}
+```
